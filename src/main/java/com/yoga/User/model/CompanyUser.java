@@ -19,7 +19,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name="\"CompanyUser\"")
+@Table(name="CompanyUser")
 @Data
 @Accessors(chain = true)
 @NoArgsConstructor
@@ -35,76 +35,76 @@ public class CompanyUser extends Master {
 	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="\"Id\"")
+	@Column(name="id")
 	private long id;
 	
 	/**
 	 * User Id
 	 */
-	@Column(name="\"UserId\"", unique=true)
+	@Column(name="userId", unique=true)
 	private String userId;
 	
 	/**
 	 * Password
 	 */
-	@Column(name="\"Password\"")
+	@Column(name="password")
 	private String password;
 	
 	/**
 	 * First Name
 	 */
-	@Column(name="\"FirstName\"")
+	@Column(name="firstName")
 	private String firstName;
 	
 	/**
 	 * Last Name
 	 */
-	@Column(name="\"LastName\"")
+	@Column(name="lastName")
 	private String lastName;
 	
 	/**
 	 * Email
 	 */
-	@Column(name="\"Email\"")
+	@Column(name="email")
 	private String email;
 	
 	/**
 	 * Company Id
 	 */
-	@Column(name="\"CompanyId\"")
+	@Column(name="companyId")
 	private long companyId;
 	
 	/**
 	 * Role Id
 	 */
-	@Column(name="\"RoleId\"")
+	@Column(name="roleId")
 	private long roleId;
 	
 	/**
 	 * Contact Id
 	 */
-	@Column(name="\"ContactId\"")
+	@Column(name="contactId")
 	private long contactId;
 	
 	/**
 	 * Company Entity
 	 */
 	@ManyToOne
-	@JoinColumn(name="\"CompanyId\"", insertable = false, updatable = false)
+	@JoinColumn(name="companyId", insertable = false, updatable = false)
 	private Company company;
 	
 	/**
 	 * Contact Entity
 	 */
 	@OneToOne
-	@JoinColumn(name="\"ContactId\"", insertable = false, updatable = false)
+	@JoinColumn(name="contactId", insertable = false, updatable = false)
 	private Contact contact;
 	
 	/**
 	 * Role Entity
 	 */
 	@ManyToOne
-	@JoinColumn(name="\"RoleId\"", insertable = false, updatable = false)
+	@JoinColumn(name="roleId", insertable = false, updatable = false)
 	private Role role;
 
 }

@@ -30,26 +30,26 @@ public class Master implements Serializable {
 	/**
 	 * Created By
 	 */
-	@Column(name="\"CreatedBy\"")
+	@Column(name="createdBy")
 	private long createdBy;
 	
 	/**
 	 * Edited By
 	 */
-	@Column(name="\"EditedBy\"")
+	@Column(name="editedBy")
 	private long editedBy;
 	
 	/**
 	 * Create Date
 	 */
-	@Column(name="\"CreateDate\"")
+	@Column(name="createDate")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date createDate;
 	
 	/**
 	 * Modified Date
 	 */
-	@Column(name="\"ModifiedDate\"")
+	@Column(name="modifiedDate")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date modifiedDate;
 

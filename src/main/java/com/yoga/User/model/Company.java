@@ -18,7 +18,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name="\"Company\"")
+@Table(name="Company")
 @Data
 @Accessors(chain = true)
 @NoArgsConstructor
@@ -34,34 +34,34 @@ public class Company extends Master {
 	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="\"Id\"")
+	@Column(name="id")
 	private long id;
 	
 	/**
 	 * Name
 	 */
-	@Column(name="\"CompanyName\"")
+	@Column(name="companyName")
 	private String name;
 	
 	/**
 	 * Registration Number
 	 */
-	@Column(name="\"CompanyCode\"", unique=true)
+	@Column(name="companyCode", unique=true)
 	private String companyCode;
 	
 	/**
 	 * Logo
 	 */
-	@Column(name="\"Logo\"")
+	@Column(name="logo")
 	private String logo;
 	
 	/**
 	 * Company Id
 	 */
-	@Column(name="\"ContactId\"")
+	@Column(name="contactId")
 	private long contactId;
 	
 	@OneToOne
-	@JoinColumn(name="\"ContactId\"", insertable = false, updatable = false)
+	@JoinColumn(name="contactId", insertable = false, updatable = false)
 	private Contact contact;
 }

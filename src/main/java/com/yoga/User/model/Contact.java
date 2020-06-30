@@ -16,7 +16,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name="\"Contact\"")
+@Table(name="Contact")
 @Data
 @Accessors(chain = true)
 @NoArgsConstructor
@@ -32,31 +32,31 @@ public class Contact extends Master {
 	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="\"Id\"")
+	@Column(name="id")
 	private long id;
 	
 	/**
 	 * Address
 	 */
-	@Column(name="\"Address\"")
+	@Column(name="address")
 	private String address;
 	
 	/**
 	 * City
 	 */
-	@Column(name="\"City\"")
+	@Column(name="city")
 	private String city;
 	
 	/**
 	 * Country
 	 */
-	@Column(name="\"Country\"")
+	@Column(name="country")
 	private String country;
 	
 	/**
 	 * Zip Code
 	 */
-	@Column(name="\"ZipCode\"")
+	@Column(name="zipCode")
 	private long zipCode;
 
 }

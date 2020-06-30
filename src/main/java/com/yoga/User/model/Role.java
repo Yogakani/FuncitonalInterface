@@ -16,7 +16,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name="\"Role\"")
+@Table(name="Role")
 @Data
 @Accessors(chain = true)
 @NoArgsConstructor
@@ -32,12 +32,12 @@ public class Role extends Master {
 	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="\"Id\"")
+	@Column(name="id")
 	private long id;
 	
 	/**
 	 * Name
 	 */
-	@Column(name="\"RoleName\"")
+	@Column(name="roleName")
 	private String name;
 }
