@@ -3,6 +3,8 @@ package com.yoga.User.controller.ui;
 import com.yoga.User.controller.request.CreateUserRequest;
 import com.yoga.User.controller.response.Response;
 import com.yoga.User.controller.response.UserResponse;
+import com.yoga.User.model.CompanyUser;
+import com.yoga.User.repositories.CustomRepository;
 import com.yoga.User.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,6 +18,8 @@ import java.util.List;
 public class UserController {
     @Autowired
     private UserService userService;
+    @Autowired
+    private CustomRepository customRepository;
 
     @PostMapping(value = "/create")
     public ResponseEntity<Response> createUser(@RequestBody CreateUserRequest createUserRequest) {
@@ -47,4 +51,9 @@ public class UserController {
         return new ResponseEntity<>(userResponse, HttpStatus.OK);
     }
 
+    @GetMapping(value = "/get")
+    public ResponseEntity<CompanyUser> getUser() {
+        CompanyUser cu =  customRepository.searchUser();
+        return new ResponseEntity<>(cu, HttpStatus.OK);
+    }
 }
