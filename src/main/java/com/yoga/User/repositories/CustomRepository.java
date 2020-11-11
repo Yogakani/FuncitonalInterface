@@ -32,4 +32,6 @@ public class CustomRepository {
                 .where(qCompanyUser.userId.eq("yoga_kani").and(qCompanyUser.firstName.eq("Yogakani")))
                 .fetchOne();
     }
+
+
 }
